@@ -337,6 +337,29 @@ int main()
 //     cout << i << endl; 
 // }
 
+// Nested loop
+
+// Pattern
+
+// 1 1 1 1 
+// 2 2 2 2
+// 3 3 3 3 
+// 4 4 4 4
+
+// int n ; 
+// cout << "Enter the number : " ;
+// cin >> n ;
+
+// // Outer loop
+// for (int i = 1 ; i <= n ; i++) {
+//     // Inner loop 
+//     for (int j = 1 ; j <= n ; j++) {
+//         //work
+//         cout << i << " " ;
+//     }
+//     cout << endl ;
+// }
+
 
     return 0;
     
