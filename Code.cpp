@@ -4,6 +4,32 @@
 
 using namespace std;
 
+int scope = 24 ;  // Global scope
+
+void sayHello () {
+    cout << "Hello :)\n" ; 
+}
+
+void assistant () {
+    sayHello () ; // call to funtion sayHello
+    cout << "work done \n" ;
+}
+
+string MyName() ;  // Function declare
+
+int sum(int a , int b = 1) {  // a , b are parameters
+    int sum = a + b ; 
+    return sum ;
+}
+
+double sum(double a, double b ) {  // Function Overloading with Type of parameters
+    return a + b ;
+}
+
+int sum (int a , int b , int c) {  // Function Overloading with no. of parameters
+    return a + b + c ;
+}
+
 int main() 
 {
 // // Draw Pattern
@@ -360,8 +386,31 @@ int main()
 //     cout << endl ;
 // }
 
+// // Function
+
+// sayHello () ; // Function call
+
+// assistant () ;
+
+// // Forward Declaration
+
+// cout << MyName() << endl ;
+
+// // Parameters
+
+// cout << sum(2,4) << endl ;  // 2,4 are argument
+
+// // Function Overloading
+// cout << sum (4 , 5) << endl ;
+// cout << sum (4.5 , 5.7) << endl ;
+// cout << sum (4 , 5 , 9) << endl ;
 
 
     return 0;
     
+}
+
+string MyName() {
+    return "Vikas Yadav" ;
+
 }
