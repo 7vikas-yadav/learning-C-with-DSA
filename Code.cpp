@@ -30,6 +30,34 @@ int sum (int a , int b , int c) {  // Function Overloading with no. of parameter
     return a + b + c ;
 }
 
+void BinToDec (int BinNum) {
+    int n = BinNum ;
+    int DecNum = 0 ;
+    int pow = 1 ;  // 2^0 2^1 2^2 ...
+
+    while (n > 0) {
+        int digit = n % 10 ;
+        DecNum = DecNum + (digit * pow) ;
+
+        pow *= 2 ;
+        n /= 10 ;
+    }
+    cout << DecNum << endl ;
+}
+
+void DecToBin (long long DecNum) {
+    long long n = DecNum ;
+    long long BinNum = 0 ;
+    long long pow = 1 ; // 10^0  10^1  10^2 ...
+    while (n > 0) {
+        long long digit = n % 2 ;
+        BinNum += pow * digit ;
+        pow *= 10 ;
+        n /= 2 ;
+    }
+    cout << BinNum << endl ;
+}
+
 int main() 
 {
 // // Draw Pattern
@@ -405,12 +433,340 @@ int main()
 // cout << sum (4.5 , 5.7) << endl ;
 // cout << sum (4 , 5 , 9) << endl ;
 
+// // Binary number system
+
+// // Binary to Decimal conversion
+// BinToDec (1111) ;
+
+// // Decimal to Binary conversion
+// DecToBin (155555LL) ;
+
+
+
 
     return 0;
     
 }
 
-string MyName() {
-    return "Vikas Yadav" ;
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// string MyName() {
+//     return "Vikas Yadav" ;
+
+// }
