@@ -58,6 +58,24 @@ void DecToBin (long long DecNum) {
     cout << BinNum << endl ;
 }
 
+void changeA(int a) {
+    a = 20 ; 
+    cout << a << "\n" ;
+}
+
+// pass by reference using pointer
+void changeB(int *ptr) {
+    *ptr = 50 ;
+    cout << *ptr << "\n" ;
+}
+
+// pass by reference using reference variable
+void changeX(int &y) {
+    y = 50 ;
+    cout << y << "\n" ;
+}
+
+
 int main() 
 {
 // // Draw Pattern
@@ -440,6 +458,81 @@ int main()
 
 // // Decimal to Binary conversion
 // DecToBin (155555LL) ;
+
+// // Pointer
+
+// // Address Of (&) operator
+
+// int t = 32 ;
+// int *ptr = &t ;
+// cout << &t << " = " << ptr << endl ;
+
+// float a = 3.3214 ;
+// float *ptr2 = &a ;
+// cout << &a << " = " << ptr2 << endl ;
+
+// cout << sizeof(ptr) << endl ;
+// cout << sizeof(ptr2) << endl ;
+// cout << &ptr << "\n" << &ptr2 << endl ;
+
+// int **pptr = &ptr ;
+// cout << &ptr << " = " << pptr << endl ;
+
+// int ***ppptr = &pptr ;
+// cout << &pptr << " = " << ppptr << endl ;
+
+// // Dereference operater
+
+// cout << &t << " = " << *(&t) << "\n" 
+//      << &ptr << " = " << *(&ptr) << "\n"
+//      << &pptr << " = " << *(&pptr) << endl ;
+
+// cout << ***ppptr << endl ;  // ***pptr = 32  it reach to the file destination
+
+// *ptr = 23 ;
+// cout << t << endl ; 
+
+// **pptr = 89 ;
+// cout << t << endl ; 
+
+// // Null pointer
+
+// int *eptr ;
+// cout << eptr << "\n" ;  // it will give a garbage value
+
+// int *nptr = nullptr ; // it will give a null pointer value
+// int *nptr2 = 0 ; // it will give a null pointer value
+// int *nptr3 = NULL ; // it will give a null pointer value
+// cout << nptr << "\n" ; // 0x0
+// cout << nptr2 << "\n" ; // 0x0
+// cout << nptr3 << "\n" ; // 0x0
+
+// cout << *nptr << endl ; // Segmentation fault
+
+// // Passing Arguments
+
+// int a = 10 ; 
+// changeA(a) ; // Pass by value
+// cout << a << endl ;
+
+// // pass by reference
+
+// int b = 30 ;
+// changeB(&b) ;
+// cout << b << endl ;
+
+// // Reference variable
+
+// int x = 32 ;
+// int &y = x ; // y and x are the same mean y and x repersent same memory location
+// y = 222 ;
+// x = 43 ;
+// cout << x << "\n"
+//      << y << endl ;
+
+// changeX(x) ;
+
+// cout << x << endl ;
 
 
 
