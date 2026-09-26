@@ -6,6 +6,7 @@ int product(int a , int b = 1) {
     return a * b ;
 }
 
+
 string IsEven(int a ) {
     if (a % 2 == 0) {
         return "Even" ;
@@ -13,6 +14,7 @@ string IsEven(int a ) {
 
     return "Odd" ;
 }
+
 
 int factorial(int a ) {
 
@@ -25,6 +27,7 @@ int fact = 1 ;
     return fact ;
 }
 
+
 string IsPrime (int a) {
     // for (int i = 2 ; i < a ; i++) {
     // OR
@@ -36,6 +39,7 @@ string IsPrime (int a) {
     return "Prime" ; 
 }
 
+
 void allprime (int n) {
     for (int i = 2 ; i < n ; i++) {
         if (IsPrime(i) == "Prime") {
@@ -44,6 +48,7 @@ void allprime (int n) {
     }
     cout << endl ;
 }
+
 
 float Binomial (int n , int r) {
     int val1 = factorial(n) ;
@@ -54,6 +59,7 @@ float Binomial (int n , int r) {
 
     return result ;
 }
+
 
 string Ispalindrome (int n) {
     int val = 0 ;
@@ -69,6 +75,7 @@ string Ispalindrome (int n) {
     return "Not a Palindrome" ;
 }
 
+
 int sumdigit(int a) {
     int value = 0 ;
     while (a > 0) {
@@ -79,9 +86,11 @@ int sumdigit(int a) {
     return value ;
 }
 
+
 int SumSquare (int a , int b) {
     return (a*a) + (b*b) + (2*a*b) ;
 }
+
 
 int largerNum(int a , int b , int c) {
     if ( a > b && a > c) {
@@ -91,6 +100,7 @@ int largerNum(int a , int b , int c) {
     }
     return c ;
 }
+
 
 char NextChar (char a) {
     if (a == 'z') {
@@ -102,6 +112,7 @@ char NextChar (char a) {
     a += 1 ;
     return a ;
 }
+
 
 int main()
 {
