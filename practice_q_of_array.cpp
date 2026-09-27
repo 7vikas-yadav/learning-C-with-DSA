@@ -38,6 +38,48 @@ int BinarySearch (int *arr , int n , int key) {
 }
 
 
+void maxProfit(int *prices , int n) {
+    int bestBuy[100000] ;
+    bestBuy[0] = INT32_MAX ;
+    for(int i = 1 ; i < n ; i++) {
+        bestBuy[i] = min(bestBuy[i-1] , prices[i-1]) ;
+    }
+
+    int maxProfit = 0 ;
+    for(int i = 0 ; i < n ; i++) {
+        int currProfit = prices[i] - bestBuy[i] ;
+        maxProfit = max(currProfit , maxProfit) ;
+    }
+
+    cout << "The max Profit : " << maxProfit << endl ;
+}
+
+
+void watertrap(int *heights , int n ) {
+    int leftmax[20000] , rightmax[20000] ;
+    leftmax[0] = heights[0] ;
+    rightmax[n-1] = heights[n-1] ;
+
+    for(int i=1 ; i<n ; i++ ) {
+        leftmax[i] = max(heights[i-1] , leftmax[i-1]) ;
+    }
+
+    for(int i= n-2 ; i>=0 ; i--) {
+        rightmax[i] = max(heights[i+1] , rightmax[i+1]) ; 
+    }
+
+    int watertrap = 0 ;
+    for (int i=0 ; i<n ; i++) {
+        int currtrap = min(leftmax[i] , rightmax[i]) - heights[i] ;
+
+        if (currtrap > 0) {
+            watertrap += currtrap ;
+        }
+    }
+    cout << "Water Trap : " << watertrap << endl ;
+}
+
+
 int main()
 {
 // Large and small array
@@ -121,7 +163,56 @@ int n = sizeof(arr) / sizeof(arr[0]) ;
 int result = BinarySearch(arr, n, 89) ;
 cout << result << endl ;
 
+// Buy and Sell stocks
 
+int prices[] = {8, 4, 2, 5, 9, 3, 0 , 2, 6} ;
+int n = sizeof(prices) / sizeof(int) ;
+
+maxProfit(prices , n) ;
+
+// Traping Rainwater
+
+int height[] = {4, 2, 0, 6, 3, 2, 5} ;
+int n = sizeof(height) / sizeof(int) ;
+
+watertrap(height , n) ;
+
+// Given an integer array nums, return true if any value appears at least
+// twice in the array, and return false if every element is distinct.
+// Examples :
+// Input: nums = [1,2,3,4]
+// Output: false
+// Input: nums = [1,1,1,3,3,4,3,2,4,2]
+// Output: true
+
+
+// There is an integer array nums sorted in ascending order (with distinct
+// values).
+// Prior to being passed to your function, nums is possibly rotated at an unknown pivot
+// index k (1 <= k < nums.length) such that the resulting array is [nums[k], nums[k+1], ...,
+// nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,5,6,7]
+// might be rotated at pivot index 3 and become [4,5,6,7,0,1,2].
+// Given the array nums after the possible rotation and an integer target, return the
+// index of target if it is in nums, or -1 if it is not in nums.
+// You must write an algorithm with O(log n) runtime complexity.
+// Examples :
+// Input: nums = [4,5,6,7,0,1,2], target = 0Output:
+// 4
+// Input: nums = [4,5,6,7,0,1,2], target = 3Output: -
+// 1
+
+
+// Given an integer array nums, find a subarray that has the largest
+// product, and return the product. The test cases are generated so that the answer will
+// fit in a 32-bit integer.
+// Note - This Qs might feel difficult as a beginner because it uses DP approach.
+// Examples :
+// Input: nums = [2,3,-2,4]
+// Output: 6
+// Explanation: [2,3] has the largest product 6.
+// Input: intervals =nums = [-2,0,-1]
+// Output: 0
+// Explanation: The result cannot be 2, because [-2,-1] is not a subarray.
     return 0;
 
 }

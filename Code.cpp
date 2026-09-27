@@ -104,6 +104,77 @@ void printArray(int arr[] , int n) {
 }
 
 
+void SubarrayPair(int *arr , int n) {
+    for (int start = 0 ; start < n ; start++) {
+        for (int end = start ; end < n ; end++ ) {
+            cout << "(" << start << "," << end << ") " ;
+        }
+        cout << endl ;
+    }
+}
+
+
+void printSubarray(int *arr , int n) {
+    for (int start = 0 ; start < n ; start++) {
+        for (int end = start ; end < n ; end++ ) {
+            cout << "{" ;
+            for (int i = start ; i <= end ; i++) {
+                cout << arr[i] << " ";
+            }
+            cout << "}" ;
+            cout << ", " ;
+        }
+        cout << endl ;
+    }
+}
+
+
+void maxSubarraySum1(int *arr , int n) {
+    int maxSum = INT32_MIN ;
+    
+    for (int str = 0 ; str < n ; str++) {
+        for (int end = str ; end < n ; end++) {
+            int CurrSum = 0 ;
+            for (int i = str ; i <= end ; i++) {
+                CurrSum += arr[i] ;
+            }
+            cout << CurrSum << ", ";
+            maxSum = max(maxSum , CurrSum) ;
+        }
+        cout << endl ;
+    }
+    cout << "The max Sum of Subarray is : " << maxSum << endl ;
+}
+
+
+void maxSubarraySum2(int *arr , int n) {
+    int maxSum = INT32_MIN ;
+    
+    for (int str = 0 ; str < n ; str++) {
+        int CurrSum = 0 ;
+        for (int end = str ; end < n ; end++) {
+            CurrSum += arr[end] ;
+            maxSum = max(maxSum , CurrSum) ;
+        }
+    }
+    cout << "The max Sum of Subarray is : " << maxSum << endl ;
+}
+
+
+void maxSubarraySum3(int *arr , int n) {
+    int maxSum = INT32_MIN ; 
+    int CurrSum = 0 ;
+    for (int i = 0 ; i < n ; i++) {
+        if(CurrSum < 0) {
+            CurrSum = 0 ;
+        }
+        CurrSum += arr[i] ;
+        maxSum = max(maxSum , CurrSum) ;
+    }
+    cout << "The max Sum of Subarray is : " << maxSum << endl ;
+}
+
+
 int main() 
 {
 // Draw Pattern
@@ -696,6 +767,25 @@ cout << (ptr4 > ptr3) << endl ; // yes -> 1
 cout << (ptr4 < ptr3) << endl ; // no -> 0
 
 // Subarrays
+
+int arr[] = {-10, -2, -3, -4, -5} ;
+int n = sizeof(arr) / sizeof(int) ;
+
+printSubarray(arr , n) ;
+
+// Max Subarray Sum
+
+//(Brute Force Approach) 
+
+maxSubarraySum1(arr , n) ;
+
+// Optimize way
+
+maxSubarraySum2(arr , n) ;
+
+// Kadane's Algorithm for Max Sum Subarray
+
+maxSubarraySum3(arr , n) ;
 
 
 return 0;
