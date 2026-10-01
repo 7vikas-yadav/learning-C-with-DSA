@@ -13,66 +13,9 @@ using namespace std;
                               ARRAYS IN C++
 ===============================================================================
 
-This file covers Arrays from BASIC -> ADVANCED.
-
-CONTENTS
 -------------------------------------------------------------------------------
-
-1. What is an Array?
-2. Why do we need Arrays?
-3. Characteristics of Arrays
-4. Array Declaration
-5. Array Initialization
-6. Indexing
-7. Accessing and Modifying Elements
-8. Array Size
-9. Array Memory / Contiguous Memory
-10. sizeof() with Arrays
-11. Array + Pointer Relationship
-12. arr, &arr[0], *arr, *(arr+i)
-13. Pointer Arithmetic
-14. Array Traversal
-15. Taking Input
-16. Printing Array
-17. Sum / Average
-18. Maximum / Minimum
-19. Counting Positive / Negative / Even / Odd
-20. Linear Search
-21. Frequency
-22. Duplicates
-23. Reverse Array
-24. Copy Array
-25. Compare Arrays
-26. Insertion
-27. Deletion
-28. Sorting
-29. Second Largest / Smallest
-30. Array Rotation
-31. Merge Arrays
-32. Union / Intersection
-33. Missing Number
-34. Pair with Given Sum
-35. Move Zeros
-36. 2D Arrays
-37. Matrix Operations
-38. Multidimensional Arrays
-39. Passing Arrays to Functions
-40. const Arrays
-41. Character Arrays
-42. C-Strings
-43. Array of Strings
-44. std::array
-45. Built-in Array vs std::array
-46. Dynamic Arrays
-47. new[] and delete[]
-48. Common Array Mistakes
-49. Time Complexity
-50. Quick Revision
-
-
-===============================================================================
 1. WHAT IS AN ARRAY?
-===============================================================================
+-------------------------------------------------------------------------------
 
 An array is a collection of multiple values of the SAME data type
 stored under one variable name.

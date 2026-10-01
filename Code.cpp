@@ -96,7 +96,7 @@ void func2(int *arr) {
 }
 
 
-void printArray(int arr[] , int n) {
+void printArray(int arr[] , int n) { // Time complexity : O(n) and Space complexity : O(1)
     for (int i = 0 ; i < n ; i++ ) {
         cout << arr[i] << "," ;
     }
@@ -104,7 +104,7 @@ void printArray(int arr[] , int n) {
 }
 
 
-void SubarrayPair(int *arr , int n) {
+void SubarrayPair(int *arr , int n) { // Time complexity : O(n^2) and Space complexity : O(1)
     for (int start = 0 ; start < n ; start++) {
         for (int end = start ; end < n ; end++ ) {
             cout << "(" << start << "," << end << ") " ;
@@ -114,7 +114,7 @@ void SubarrayPair(int *arr , int n) {
 }
 
 
-void printSubarray(int *arr , int n) {
+void printSubarray(int *arr , int n) { // Time complexity : O(n^3) and Space complexity : O(1)
     for (int start = 0 ; start < n ; start++) {
         for (int end = start ; end < n ; end++ ) {
             cout << "{" ;
@@ -129,7 +129,7 @@ void printSubarray(int *arr , int n) {
 }
 
 
-void maxSubarraySum1(int *arr , int n) {
+void maxSubarraySum1(int *arr , int n) { // Time complexity : O(n^3) and Space complexity : O(1)
     int maxSum = INT32_MIN ;
     
     for (int str = 0 ; str < n ; str++) {
@@ -147,7 +147,7 @@ void maxSubarraySum1(int *arr , int n) {
 }
 
 
-void maxSubarraySum2(int *arr , int n) {
+void maxSubarraySum2(int *arr , int n) { // Time complexity : O(n^2) and Space complexity : O(1)
     int maxSum = INT32_MIN ;
     
     for (int str = 0 ; str < n ; str++) {
@@ -161,8 +161,8 @@ void maxSubarraySum2(int *arr , int n) {
 }
 
 
-void maxSubarraySum3(int *arr , int n) {
-    int maxSum = INT32_MIN ; 
+void maxSubarraySum3(int *arr , int n) { // Kadane's Algorithm
+    int maxSum = INT32_MIN ;             // Time complexity : O(n) and Space complexity : O(1)
     int CurrSum = 0 ;
     for (int i = 0 ; i < n ; i++) {
         if(CurrSum < 0) {
@@ -558,6 +558,23 @@ BinToDec (1111) ;
 // Decimal to Binary conversion
 DecToBin (155555LL) ;
 
+// Bitwise operators
+
+int a = 4 , b = 8 ;
+
+// Bitwise AND operator
+cout << "Bitwise AND operator : " << (a & b) << endl ; // if both bits are 1 then only it will return 1 else 0
+// Bitwise OR operator
+cout << "Bitwise OR operator : " << (a | b) << endl ; // if either bit is 1 then it will return 1 else 0
+// Bitwise XOR operator
+cout << "Bitwise XOR operator : " << (a ^ b) << endl ; // if bits are different then it will return 1 else 0
+// Bitwise NOT operator
+cout << "Bitwise NOT operator : " << (~a) << endl ; // inverts all bits
+// Bitwise left shift operator
+cout << "Bitwise left shift operator : " << (a << b) << endl ; // shifts bits to the left  also a * pow(2,b)
+// Bitwise right shift operator
+cout << "Bitwise right shift operator : " << (a >> b) << endl ; // shifts bits to the right  also a / pow(2,b)
+
 // Pointer
 
 // Address Of (&) operator
@@ -786,6 +803,25 @@ maxSubarraySum2(arr , n) ;
 // Kadane's Algorithm for Max Sum Subarray
 
 maxSubarraySum3(arr , n) ;
+
+//
+int arr[7] = {6, 9, 8, 3, 2, 4, 6} ;
+int xptr[7] ;
+int n = sizeof(arr) / sizeof(int) ;
+
+// RANGE-BASED FOR LOOP
+for(int value : arr) {
+    cout << value << " " ;
+}
+cout << endl ;
+
+// copying array
+copy(arr, arr+7 , xptr) ;
+
+for(int value : xptr) {
+    cout << value << " " ;
+}
+
 
 
 return 0;

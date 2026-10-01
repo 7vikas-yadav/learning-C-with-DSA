@@ -80,6 +80,58 @@ void watertrap(int *heights , int n ) {
 }
 
 
+bool IsDublicat (int * value , int n ) {
+    for (int i=0 ; i < n ; i++) {
+        for (int j=0 ; j<n ; j++) {
+            if(i==j) {
+                continue;
+            }
+
+            if(value[i] == value[j]) {
+                return true ;
+            }
+        }
+    }
+    return false ;
+}
+
+
+int findTar(int *arr , int n , int target) {
+    for(int i=0 ; i < n ; i++) {
+        if (target == arr[i]) {
+            return i ;
+        } else if (target == arr[n-i-1]) {
+            return n-i-1 ;
+        }
+    }
+    return -1 ; 
+}
+
+
+double ProductSubarray(int *arr , int n) {
+
+    double product = INT32_MIN ;
+
+    for(int start = 0 ; start < n ; start++) {
+        
+        for(int end=start ; end < n ; end++) {
+            
+            double currproduct = 1 ;
+            for(int i=start ; i<=end ; i++) {
+                
+                currproduct *= arr[i] ;
+                
+            }
+            product = max(product , currproduct) ;  
+        }
+    }
+    if (product >= 0) {
+        return product ;
+    }
+    return -1 ;
+}
+
+
 int main()
 {
 // Large and small array
@@ -160,7 +212,7 @@ printArr(arr , n) ;
 int arr[] = {21, 22, 43, 45, 57, 67, 78, 89, 90} ;
 int n = sizeof(arr) / sizeof(arr[0]) ;
 
-int result = BinarySearch(arr, n, 89) ;
+int result = BinarySearch(arr, n, 89) ; // Time complexity : O(log n) and Space complexity : O(1)
 cout << result << endl ;
 
 // Buy and Sell stocks
@@ -168,14 +220,14 @@ cout << result << endl ;
 int prices[] = {8, 4, 2, 5, 9, 3, 0 , 2, 6} ;
 int n = sizeof(prices) / sizeof(int) ;
 
-maxProfit(prices , n) ;
+maxProfit(prices , n) ; // Time complexity : O(n) and Space complexity : O(n)
 
 // Traping Rainwater
 
 int height[] = {4, 2, 0, 6, 3, 2, 5} ;
 int n = sizeof(height) / sizeof(int) ;
 
-watertrap(height , n) ;
+watertrap(height , n) ; // Time complexity : O(n) and Space complexity : O(n)
 
 // Given an integer array nums, return true if any value appears at least
 // twice in the array, and return false if every element is distinct.
@@ -185,7 +237,12 @@ watertrap(height , n) ;
 // Input: nums = [1,1,1,3,3,4,3,2,4,2]
 // Output: true
 
+    int num [] = {1, 3, 4, 5} ;
+    int n = sizeof(num) / sizeof(int) ;
 
+    cout << IsDublicat(num , n) << endl ; // Time complexity : O(n^2) and Space complexity : O(1)
+
+    
 // There is an integer array nums sorted in ascending order (with distinct
 // values).
 // Prior to being passed to your function, nums is possibly rotated at an unknown pivot
@@ -201,6 +258,11 @@ watertrap(height , n) ;
 // Input: nums = [4,5,6,7,0,1,2], target = 3Output: -
 // 1
 
+int arr[] = {4, 5, 6, 7, 1, 2, 3} ;  // Time complexity : O(n) and Space complexity : O(1)
+int n = sizeof(arr) / sizeof(int) ;
+
+cout << findTar(arr, n , 6) ;
+
 
 // Given an integer array nums, find a subarray that has the largest
 // product, and return the product. The test cases are generated so that the answer will
@@ -213,6 +275,12 @@ watertrap(height , n) ;
 // Input: intervals =nums = [-2,0,-1]
 // Output: 0
 // Explanation: The result cannot be 2, because [-2,-1] is not a subarray.
+
+int num[] = {2, -3, 5, 6, 7} ;
+int n = sizeof(num) / sizeof(int) ;
+
+cout << ProductSubarray(num , n) ; // Time complexity : O(n^3) and Space complexity : O(1)
+
     return 0;
 
 }
